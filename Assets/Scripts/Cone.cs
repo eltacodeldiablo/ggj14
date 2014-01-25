@@ -24,6 +24,7 @@ public class Cone : MonoBehaviour {
             
 			Vector3 fwdVec = this.transform.up;
             Vector2 rayDir = new Vector2(fwdVec.x * cs - fwdVec.y * sn, fwdVec.x * sn + fwdVec.y * cs);
+			LayerMask mask = 1;
 			RaycastHit2D hitObj = Physics2D.Raycast(this.transform.position, rayDir);
 			if(hitObj.transform != null ){
 				//red if hitting an object
@@ -32,6 +33,7 @@ public class Cone : MonoBehaviour {
 
 			Debug.DrawLine(this.transform.position, new Vector3(10*rayDir.x, 10*rayDir.y, 0), Color.red);
 		}
+
 	}
    
 }
