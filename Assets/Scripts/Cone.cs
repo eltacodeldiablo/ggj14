@@ -59,9 +59,9 @@ public class Cone : MonoBehaviour {
                     hitObj.transform.gameObject.SendMessage(player.transform.gameObject.tag+"Looking");
                 }   
 
-                    //Add to new Mesh vert at point of contact
-                    newVertices[intI+1] = new Vector3(hitObj.point.x,hitObj.point.y,0);
-                    newUV[intI+1] = new Vector2(newVertices[intI+1].x, newVertices[intI+1].y);
+                //Add to new Mesh vert at point of contact
+                newVertices[intI+1] = new Vector3(hitObj.point.x,hitObj.point.y,0);
+                newUV[intI+1] = new Vector2(newVertices[intI+1].x, newVertices[intI+1].y);
             }
             else{
                 //Otherwise add vert at farthest view distance
