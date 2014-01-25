@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &40205943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!50 &40260229
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -300,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &190148102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -374,9 +377,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 215766354}
   - 33: {fileID: 215766357}
-  - 136: {fileID: 215766356}
   - 23: {fileID: 215766355}
   - 114: {fileID: 215766358}
+  - 61: {fileID: 215766356}
   m_Layer: 0
   m_Name: Lever Test
   m_TagString: Lever
@@ -391,7 +394,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 215766353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.03324842, y: -4.67441082, z: 0}
+  m_LocalPosition: {x: -2.13652945, y: .7638731, z: 0}
   m_LocalScale: {x: .606862962, y: .606862962, z: .606862962}
   m_Children: []
   m_Father: {fileID: 1991260967}
@@ -416,19 +419,17 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
---- !u!136 &215766356
-CapsuleCollider:
+--- !u!61 &215766356
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 215766353}
+  m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.00000012, y: 2}
+  m_Center: {x: 5.96046448e-08, y: 0}
 --- !u!33 &215766357
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -495,6 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &361378916
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -603,6 +605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &381962668
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -731,8 +734,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 660248103}
   m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
-  m_LocalPosition: {x: -2.82992268, y: 1.70976496, z: 8.40621069e-05}
-  m_LocalScale: {x: .430523008, y: 8.15234089, z: 1}
+  m_LocalPosition: {x: -2.82992268, y: 2.1605525, z: 8.40621069e-05}
+  m_LocalScale: {x: 1.11935973, y: 8.15234089, z: 1}
   m_Children: []
   m_Father: {fileID: 1991260967}
 --- !u!50 &660248105
@@ -762,6 +765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &660248107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -918,6 +922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &962289198
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1011,6 +1016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 1
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!50 &1018418463
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1065,87 +1071,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1018418460}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1054111556
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1054111561}
-  - 33: {fileID: 1054111560}
-  - 23: {fileID: 1054111559}
-  - 61: {fileID: 1054111558}
-  - 114: {fileID: 1054111557}
-  m_Layer: 0
-  m_Name: Moveable Cube Test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1054111557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1054111556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da160cdf36a16834b8c5f4f3af181c9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isMoveable: 0
---- !u!61 &1054111558
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1054111556}
-  m_Enabled: 0
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
---- !u!23 &1054111559
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1054111556}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!33 &1054111560
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1054111556}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1054111561
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1054111556}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.74659443, y: 1.82548523, z: 8.40621069e-05}
-  m_LocalScale: {x: 1.28749979, y: 1.68394005, z: 1.16133797}
-  m_Children: []
-  m_Father: {fileID: 1991260967}
 --- !u!1 &1094821398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,6 +1192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!50 &1105717594
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1379,6 +1305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &1193143748
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1476,6 +1403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &1202922129
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1612,6 +1540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 1
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1285607116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,6 +1696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &1344714626
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1878,6 +1808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!50 &1701642344
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1990,6 +1921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &1757125867
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2076,6 +2008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &1853998275
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2126,6 +2059,102 @@ Transform:
   m_LocalScale: {x: .430523008, y: 2.80834699, z: 1}
   m_Children: []
   m_Father: {fileID: 1991260967}
+--- !u!1 &1928146800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1928146801}
+  - 33: {fileID: 1928146806}
+  - 23: {fileID: 1928146805}
+  - 61: {fileID: 1928146804}
+  - 50: {fileID: 1928146802}
+  - 114: {fileID: 1928146803}
+  m_Layer: 2
+  m_Name: MoveableGate
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1928146801
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1928146800}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
+  m_LocalPosition: {x: -6.5781045, y: .0309028625, z: 8.40621069e-05}
+  m_LocalScale: {x: 3.79183197, y: .285330862, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1991260967}
+--- !u!50 &1928146802
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1928146800}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!114 &1928146803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1928146800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f007272aca8944748521ca9e0291542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1928146804
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1928146800}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &1928146805
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1928146800}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1928146806
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1928146800}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1985986947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,6 +2188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  actionRange: 1.10000002
 --- !u!23 &1985986949
 Renderer:
   m_ObjectHideFlags: 0
@@ -2205,7 +2235,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1985986947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.96411991, y: -15.8798485, z: 0}
+  m_LocalPosition: {x: 3.0598135, y: -6.63790321, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1094821399}
@@ -2269,13 +2299,13 @@ Transform:
   - {fileID: 1105717592}
   - {fileID: 1701642342}
   - {fileID: 1018418461}
-  - {fileID: 1054111561}
   - {fileID: 660248104}
   - {fileID: 1193143745}
   - {fileID: 40205940}
   - {fileID: 1853998278}
   - {fileID: 1202922126}
   - {fileID: 1757125864}
+  - {fileID: 1928146801}
   m_Father: {fileID: 0}
 --- !u!1 &2024657483
 GameObject:
@@ -2324,6 +2354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoveable: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &2024657486
 BoxCollider2D:
   m_ObjectHideFlags: 0
