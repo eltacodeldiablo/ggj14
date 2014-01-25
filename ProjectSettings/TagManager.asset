@@ -7,6 +7,8 @@ TagManager:
   - Player1
   - Player2
   - Lever
+  - Player3
+  - Player4
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

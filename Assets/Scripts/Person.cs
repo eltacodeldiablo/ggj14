@@ -19,7 +19,6 @@ public class Person : MonoBehaviour {
 			x = Input.GetAxis("HorizontalKeyboard") * Time.deltaTime * speed;
 			y = Input.GetAxis("VerticalKeyboard") * Time.deltaTime * speed * -1;
 			this.transform.Translate(x, y, 0, Space.World); //global axis
-
 			rtx = Input.GetAxis("HorizontalKeyboard");
 			rty = -1*Input.GetAxis("VerticalKeyboard");
 			// Debug.Log(Input.GetAxis("L_XAxis_1") + " " + Time.deltaTime + " " + speed);
