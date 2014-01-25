@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class Block : MonoBehaviour {
-
+	public bool isMoveable;
 	// Use this for initialization
 	void Start () {
 	
