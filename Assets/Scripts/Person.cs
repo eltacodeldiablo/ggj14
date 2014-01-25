@@ -40,7 +40,7 @@ public class Person : MonoBehaviour {
 
 	void checkAction(){
 		if (Input.GetKeyDown ("space")){//action
-			print("space pressed");
+			//print("space pressed");
 
 			Vector3 fwdVec = this.transform.up;
 			RaycastHit2D hitObj = Physics2D.Raycast(this.transform.position, fwdVec, 2);
@@ -48,7 +48,7 @@ public class Person : MonoBehaviour {
 				hitObj.transform.gameObject.SendMessage("Activate");
 			}
 
-			Debug.DrawLine(this.transform.position, this.transform.position + new Vector3(fwdVec.x*actionRange,fwdVec.y*actionRange,0), Color.blue, 100);
+			Debug.DrawLine(this.transform.position, this.transform.position + new Vector3(fwdVec.x*actionRange,fwdVec.y*actionRange,0), Color.blue, 20);
 
 		}
 	}
