@@ -2,8 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class Cone : MonoBehaviour {
-	public float playerFOV = 40.0f;
-	public float viewDist = 4f;
+	float playerFOV = 40.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +25,7 @@ public class Cone : MonoBehaviour {
 			Vector3 fwdVec = this.transform.up;
             Vector2 rayDir = new Vector2(fwdVec.x * cs - fwdVec.y * sn, fwdVec.x * sn + fwdVec.y * cs);
 			LayerMask mask = 1;
-			RaycastHit2D hitObj = Physics2D.Raycast(this.transform.position, rayDir,viewDist);
+			RaycastHit2D hitObj = Physics2D.Raycast(this.transform.position, rayDir);
 			if(hitObj.transform != null ){
 				//red if hitting an object
 				this.transform.renderer.material.color = Color.red;
@@ -34,7 +33,7 @@ public class Cone : MonoBehaviour {
 				hitObj.transform.gameObject.SendMessage(this.tag+"Looking");
 			}
 
-			Debug.DrawLine(this.transform.position,this.transform.position + new Vector3(viewDist*rayDir.normalized.x, viewDist*rayDir.normalized.y, 0), Color.red);
+			Debug.DrawLine(this.transform.position, new Vector3(10*rayDir.x, 10*rayDir.y, 0), Color.red);
 		}
 
 	}
