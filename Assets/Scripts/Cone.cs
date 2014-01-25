@@ -27,7 +27,7 @@ public class Cone : MonoBehaviour {
             Vector2 rayDir = new Vector2(fwdVec.x * cs - fwdVec.y * sn, fwdVec.x * sn + fwdVec.y * cs);
 			LayerMask mask = 1;
 			RaycastHit2D hitObj = Physics2D.Raycast(this.transform.position, rayDir,viewDist);
-			if(hitObj.transform != null ){
+			if(hitObj.transform != null){
 				//red if hitting an object
 				this.transform.renderer.material.color = Color.red;
 				//Send a message to the obj hit to do it's thing
