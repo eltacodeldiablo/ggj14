@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class Block : MonoBehaviour {
-
+	public bool isMoveable;
 	// Use this for initialization
 	void Start () {
 	
@@ -11,7 +11,9 @@ public class Block : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//fix the rotation
-		this.transform.rotation = Quaternion.Euler(Vector3.zero);
+		if(isMoveable){
+			this.transform.rotation = Quaternion.Euler(Vector3.zero);
+		}
 	}
 	
 	void Player1Looking(){
