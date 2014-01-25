@@ -88,7 +88,7 @@ GameObject:
   - 114: {fileID: 190148101}
   - 50: {fileID: 190148106}
   m_Layer: 2
-  m_Name: Cube
+  m_Name: Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,7 +185,7 @@ GameObject:
   - 114: {fileID: 361378915}
   - 50: {fileID: 361378914}
   m_Layer: 2
-  m_Name: Cube
+  m_Name: Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,6 +268,103 @@ Transform:
   m_LocalScale: {x: 1.76625013, y: 39.8500938, z: 1}
   m_Children: []
   m_Father: {fileID: 2143792673}
+--- !u!1 &381962664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 381962665}
+  - 33: {fileID: 381962670}
+  - 23: {fileID: 381962669}
+  - 61: {fileID: 381962668}
+  - 114: {fileID: 381962667}
+  - 50: {fileID: 381962666}
+  m_Layer: 2
+  m_Name: Wall
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &381962665
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 381962664}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
+  m_LocalPosition: {x: 9.36767292, y: 5.27520084, z: -.00870500039}
+  m_LocalScale: {x: .52987498, y: 13.8915653, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1455780339}
+--- !u!50 &381962666
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 381962664}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!114 &381962667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 381962664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da160cdf36a16834b8c5f4f3af181c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoveable: 0
+--- !u!61 &381962668
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 381962664}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &381962669
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 381962664}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &381962670
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 381962664}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &479539754
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +511,7 @@ GameObject:
   - 114: {fileID: 962289197}
   - 50: {fileID: 962289196}
   m_Layer: 2
-  m_Name: Cube
+  m_Name: Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -645,8 +742,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1254382208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.42954493, y: .111869812, z: -.00870513916}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.03655267, y: -11.2259274, z: -.00870513916}
+  m_LocalScale: {x: 1.45914817, y: 1.45914817, z: 1.45914817}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!61 &1254382213
@@ -671,7 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da160cdf36a16834b8c5f4f3af181c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMoveable: 0
+  isMoveable: 1
 --- !u!1 &1285607116
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +866,131 @@ MonoBehaviour:
   beginMoveThreshold: 3
   endMoveThreshold: .5
   vel: 3
+--- !u!1 &1344714622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1344714623}
+  - 33: {fileID: 1344714628}
+  - 23: {fileID: 1344714627}
+  - 61: {fileID: 1344714626}
+  - 114: {fileID: 1344714625}
+  - 50: {fileID: 1344714624}
+  m_Layer: 2
+  m_Name: Wall
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1344714623
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1344714622}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
+  m_LocalPosition: {x: -6.89718723, y: 5.27520084, z: -.00870500039}
+  m_LocalScale: {x: .529874682, y: 14.1779823, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1455780339}
+--- !u!50 &1344714624
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1344714622}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!114 &1344714625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1344714622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da160cdf36a16834b8c5f4f3af181c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoveable: 0
+--- !u!61 &1344714626
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1344714622}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &1344714627
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1344714622}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1344714628
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1344714622}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1455780338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1455780339}
+  m_Layer: 0
+  m_Name: Gate Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1455780339
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1455780338}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.58221757, y: -15.8220568, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1344714623}
+  - {fileID: 381962665}
+  m_Father: {fileID: 0}
 --- !u!1 &1985986947
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +1023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ec25ea2518ca04ca307f175a7961eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 4
 --- !u!23 &1985986949
 Renderer:
   m_ObjectHideFlags: 0
@@ -894,7 +1116,7 @@ GameObject:
   - 114: {fileID: 2024657485}
   - 50: {fileID: 2024657484}
   m_Layer: 2
-  m_Name: Cube
+  m_Name: Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
