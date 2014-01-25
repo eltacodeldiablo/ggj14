@@ -11,8 +11,10 @@ public class Person : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//wasd movement
-		float x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
-		float y = Input.GetAxis("Vertical") * Time.deltaTime * speed;
+
+		// Debug.Log(Input.GetAxis("L_XAxis_1") + " " + Time.deltaTime + " " + speed);
+		float x = Input.GetAxis("L_XAxis_1") * Time.deltaTime * speed;
+		float y = Input.GetAxis("L_YAxis_1") * Time.deltaTime * speed * -1;
 		this.transform.Translate(x, y, 0, Space.World); //global axis
 
 		//look at mouse position
@@ -25,8 +27,8 @@ public class Person : MonoBehaviour {
 		// float angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
 
 		//controller inputs
-		float rtx = Input.GetAxis("RightH");
-		float rty = -1*Input.GetAxis("RightV");
+		float rtx = Input.GetAxis("R_XAxis_1");
+		float rty = -1*Input.GetAxis("R_YAxis_1");
 
 		//change the angle
 		float angle = Mathf.Atan2(rty, rtx) * Mathf.Rad2Deg;
