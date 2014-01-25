@@ -2,11 +2,10 @@
 using System.Collections;
 
 public class Person : MonoBehaviour {
-	public float speed;
+	public float speed = 2.0f;
 	
 	// Use this for initialization
 	void Start () {
-	   speed = 2.0f;
 	}
 
 	// Update is called once per frame
