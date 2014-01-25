@@ -6,7 +6,7 @@ public class Person : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-	   speed = 1.0f;
+	   speed = 2.0f;
 	}
 
 	// Update is called once per frame
