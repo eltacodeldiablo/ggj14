@@ -29,6 +29,8 @@ public class Cone : MonoBehaviour {
 			if(hitObj.transform != null ){
 				//red if hitting an object
 				this.transform.renderer.material.color = Color.red;
+				//Send a message to the obj hit to do it's thing
+				hitObj.transform.gameObject.SendMessage(this.tag+"Looking");
 			}
 
 			Debug.DrawLine(this.transform.position, new Vector3(10*rayDir.x, 10*rayDir.y, 0), Color.red);
