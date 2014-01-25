@@ -16,9 +16,16 @@ public class Person : MonoBehaviour {
 		checkAction();
 
 		// Debug.Log(Input.GetAxis("L_XAxis_1") + " " + Time.deltaTime + " " + speed);
-		float x = Input.GetAxis("L_XAxis_1") * Time.deltaTime * speed;
-		float y = Input.GetAxis("L_YAxis_1") * Time.deltaTime * speed * -1;
+		// Debug.Log(this.tag + " " + this.tag.Substring(this.tag.Length-1,1));
+		float x = Input.GetAxis("L_XAxis_" + this.tag.Substring(this.tag.Length-1,1)) * Time.deltaTime * speed;
+		float y = Input.GetAxis("L_YAxis_" + this.tag.Substring(this.tag.Length-1,1)) * Time.deltaTime * speed * -1;
+		float rtx = Input.GetAxis("R_XAxis_" + this.tag.Substring(this.tag.Length-1,1));
+		float rty = -1*Input.GetAxis("R_YAxis_" + this.tag.Substring(this.tag.Length-1,1));
 		this.transform.Translate(x, y, 0, Space.World); //global axis
+
+		//change the angle
+		float angle = Mathf.Atan2(rty, rtx) * Mathf.Rad2Deg;
+		this.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, angle - 90));
 
 		//look at mouse position
 		//The distance between the camera and object
@@ -29,13 +36,6 @@ public class Person : MonoBehaviour {
 		// mouse_pos.z = Camera.main.transform.position.z - this.transform.position.z;
 		// float angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
 
-		//controller inputs
-		float rtx = Input.GetAxis("R_XAxis_1");
-		float rty = -1*Input.GetAxis("R_YAxis_1");
-
-		//change the angle
-		float angle = Mathf.Atan2(rty, rtx) * Mathf.Rad2Deg;
-		this.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, angle - 90));
 	}
 
 	void checkAction(){
