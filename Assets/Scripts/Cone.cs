@@ -2,15 +2,24 @@ using UnityEngine;
 using System.Collections;
 
 public class Cone : MonoBehaviour {
+<<<<<<< HEAD
     public float playerFOV = 40.0f;
     public float viewDist = 4f;
     public float degBtwnRays = 1f;
     public Material mat;
     public GameObject player;
 
+=======
+        public float playerFOV = 40.0f;
+        public float viewDist = 4f;
+        public float degBtwnRays = 1f;
+        public GameObject player;
+        public Material coneMaterial;
+        
+>>>>>>> 16df14a4657caf628751747e49bafc0c9f16d5dc
         private Vector3[] newVertices;
-    private Vector2[] newUV;
-    private int[] newTriangles;
+        private Vector2[] newUV;
+        private int[] newTriangles;
 
     void Start() {
         Mesh mesh = new Mesh();
@@ -35,6 +44,8 @@ public class Cone : MonoBehaviour {
             
             //MESH INIT
             Mesh mesh = GetComponent<MeshFilter>().mesh;
+            Renderer renderer = GetComponent<MeshRenderer>().renderer;
+
             mesh.Clear();
 		    newVertices[0] = player.transform.position;
 		    // Debug.Log(newVertices.Length);
@@ -94,10 +105,24 @@ public class Cone : MonoBehaviour {
 	        //this.transform.position = new Vectorthis.transform.position;
 	    
         }
+<<<<<<< HEAD
     //MODIFY MESH;
     mesh.vertices = newVertices;
     mesh.uv = newUV;
     mesh.triangles = newTriangles;
+=======
+        //MODIFY MESH;
+        mesh.vertices = newVertices;
+        mesh.uv = newUV;
+        mesh.triangles = newTriangles;
+        mesh.RecalculateNormals();
+
+        //add texture based on player
+        Material mat = Resources.Load("VisionConeP" + player.tag.Substring(player.tag.Length-1,1)) as Material;
+        renderer.material = mat;
+        print(mat);
+    }
+>>>>>>> 16df14a4657caf628751747e49bafc0c9f16d5dc
 
     Color[] colors = new Color[mesh.vertices.Length];
 
