@@ -13,7 +13,7 @@ public class Main : MonoBehaviour {
     public float zoomSpeed = 11f;
     private const int originalOrthographicSize = 5;
     private bool isScrolling = false;
-    
+
 	// Use this for initialization
 	void Start () {
 		populateWithFood();
@@ -56,20 +56,20 @@ public class Main : MonoBehaviour {
 		float diffInPlayerDist = (player1.transform.position - player2.transform.position).magnitude;
 
 		if (diffInPlayerDist + 6 > camera.orthographicSize) {
-			camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, diffInPlayerDist + 4, Time.deltaTime * zoomSpeed);
+			camera.orthographicSize = Mathf.Min(Mathf.Lerp(camera.orthographicSize, diffInPlayerDist + 4, Time.deltaTime * zoomSpeed),20);
 		} else if (diffInPlayerDist > originalOrthographicSize && diffInPlayerDist < camera.orthographicSize - 6) {
-			camera.orthographicSize = Mathf.Min(Mathf.Lerp(diffInPlayerDist - 2, camera.orthographicSize, Time.deltaTime * zoomSpeed),
+			camera.orthographicSize = Mathf.Max(Mathf.Lerp(diffInPlayerDist - 2, camera.orthographicSize, Time.deltaTime * zoomSpeed),
 				originalOrthographicSize);
 		}
 	}
 
 	void populateWithFood() {
 		for(int i = 0; i < numFood; i++){
-		    Instantiate(foodPrefab, createRandomVector(), Quaternion.Euler(createRandomVector()));
+		    Instantiate(foodPrefab, createRandomVector(), Quaternion.Euler(Vector3.zero));
 		}
 	}
 	
 	Vector2 createRandomVector(){
-	    return new Vector2(Random.Range(-15,1),Random.Range(-15,15));
+	    return new Vector2(Random.Range(-16,18),Random.Range(-30,5));
 	}
 }

@@ -8156,7 +8156,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .125, g: .125, b: .125, a: .0196078438}
+  m_BackGroundColor: {r: .619607866, g: .619607866, b: .627451003, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -8201,7 +8201,7 @@ MonoBehaviour:
   player1: {fileID: 1382562915}
   player2: {fileID: 1985986947}
   foodPrefab: {fileID: 100000, guid: 75334d7705a60414da3863b182d84afd, type: 2}
-  numFood: 15
+  numFood: 30
   accelerationModifier: .00999999978
   beginMoveThreshold: 1
   endMoveThreshold: .5
@@ -8757,7 +8757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ec25ea2518ca04ca307f175a7961eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 6
   actionRange: 1.10000002
   useController: 1
 --- !u!23 &1382562919
@@ -9763,6 +9763,10 @@ Prefab:
     - target: {fileID: 100004, guid: 2b67a567ad2aed64180bf8eba5dd4691, type: 2}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2b67a567ad2aed64180bf8eba5dd4691, type: 2}
+      propertyPath: speed
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b67a567ad2aed64180bf8eba5dd4691, type: 2}

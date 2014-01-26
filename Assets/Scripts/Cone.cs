@@ -41,7 +41,7 @@ public class Cone : MonoBehaviour {
             // Debug.Log(newVertices.Length);
             newUV[0] = new Vector2(newVertices[0].x, newVertices[0].y);
 
-        for(float i = 0f; i < playerFOV; i+=degBtwnRays) {//Raycast every 1 degree in FOV
+        for(float i = 0f; i < playerFOV && GetComponent<MeshRenderer>().enabled; i+=degBtwnRays) {//Raycast every 1 degree in FOV
             //RAYCAST INIT
             int intI = Mathf.FloorToInt(i);
 

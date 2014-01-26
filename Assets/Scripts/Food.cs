@@ -23,7 +23,8 @@ public class Food : MonoBehaviour {
 			sender.SendMessage("addToTail", originalSize);
 			//remove object
 			this.transform.localScale = new Vector3(originalSize,originalSize,originalSize);
-			this.transform.position = new Vector3(Random.Range(-20,20),Random.Range(-20,20));
+			var range = 15;
+			this.transform.position = new Vector2(Random.Range(-16,18),Random.Range(-30,5));
 			// Destroy(this.gameObject);
 		}
 		
