@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Food : MonoBehaviour {
+public class Poision : MonoBehaviour {
 	
 	private float originalSize;
 
@@ -20,11 +20,11 @@ public class Food : MonoBehaviour {
 		if (this.transform.localScale.x > 0.1f) {
 			this.transform.localScale -= new Vector3(.002f,.002f,.002f);
 		} else {
-			sender.SendMessage("addToTail", originalSize);
+			sender.SendMessage("removeFromTail", originalSize);
 			//remove object
-			this.transform.localScale = new Vector3(originalSize,originalSize,originalSize);
-			this.transform.position = new Vector3(Random.Range(-20,20),Random.Range(-20,20));
-			// Destroy(this.gameObject);
+// 			this.transform.localScale = new Vector3(originalSize,originalSize,originalSize);
+// 			this.transform.position = new Vector3(Random.Range(-20,20),Random.Range(-20,20));
+			Destroy(this.gameObject);
 		}
 		
 	}

@@ -6,6 +6,9 @@ public class Person : MonoBehaviour {
 	public float actionRange = 1.2f;
 	public bool useController = true;
 	
+	private float foodEaten = 0;
+	private float poisonEaten = 0;
+		
 	private float previousAngle;
 	// Use this for initialization
 	void Start () {
@@ -54,11 +57,11 @@ public class Person : MonoBehaviour {
 			//print("space pressed");
 			Vector3 fwdVec = this.transform.up;
 			RaycastHit2D hitObj = Physics2D.Raycast(this.transform.position, fwdVec, 2);
-			if(hitObj.transform != null){
+			if(hitObj.transform != null && hitObj.transform.gameObject.tag == "Lever"){
 				hitObj.transform.gameObject.SendMessage("Activate");
-				Debug.DrawLine(this.transform.position, new Vector2(hitObj.point.x, hitObj.point.y), Color.blue, 20);
+				// Debug.DrawLine(this.transform.position, new Vector2(hitObj.point.x, hitObj.point.y), Color.blue, 20);
 			}else{
-				Debug.DrawLine(this.transform.position, this.transform.position + new Vector3(fwdVec.x*actionRange,fwdVec.y*actionRange,0), Color.blue, 20);
+				// Debug.DrawLine(this.transform.position, this.transform.position + new Vector3(fwdVec.x*actionRange,fwdVec.y*actionRange,0), Color.blue, 20);
 			}
 		}
 	}
@@ -71,7 +74,13 @@ public class Person : MonoBehaviour {
 	}
 
 	void addToTail(float ogSize) {
+	    foodEaten += ogSize; //# of blocks/size/dimensions?
 		this.transform.GetComponentInChildren<ParticleSystem>().startLifetime += ogSize/10f;
+	}
+	
+	void removeFromTail(float ogSize) {
+	    poisonEaten += ogSize; //# of blocks/size/dimensions?
+		this.transform.GetComponentInChildren<ParticleSystem>().startLifetime -= ogSize/10f;
 	}
 
 }

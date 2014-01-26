@@ -4,6 +4,8 @@ using System.Collections;
 public class Main : MonoBehaviour {
     public GameObject player1;
     public GameObject player2;
+    public GameObject foodPrefab;
+    public int numFood = 30;
 	public float accelerationModifier = 0.001f;//A larger number means a faster acceleration
 	public float beginMoveThreshold = 1.5f;
 	public float endMoveThreshold = .1f;
@@ -11,9 +13,10 @@ public class Main : MonoBehaviour {
     public float zoomSpeed = 11f;
     private const int originalOrthographicSize = 5;
     private bool isScrolling = false;
+    
 	// Use this for initialization
 	void Start () {
-	
+		populateWithFood();
 	}
 	
 	// Update is called once per frame
@@ -58,5 +61,15 @@ public class Main : MonoBehaviour {
 			camera.orthographicSize = Mathf.Min(Mathf.Lerp(diffInPlayerDist - 2, camera.orthographicSize, Time.deltaTime * zoomSpeed),
 				originalOrthographicSize);
 		}
+	}
+
+	void populateWithFood() {
+		for(int i = 0; i < numFood; i++){
+		    Instantiate(foodPrefab, createRandomVector(), Quaternion.Euler(createRandomVector()));
+		}
+	}
+	
+	Vector2 createRandomVector(){
+	    return new Vector2(Random.Range(-15,1),Random.Range(-15,15));
 	}
 }
