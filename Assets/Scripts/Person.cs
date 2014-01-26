@@ -4,8 +4,9 @@ using System.Collections;
 public class Person : MonoBehaviour {
 	public float speed = 2.0f;
 	public float actionRange = 1.2f;
-	public bool useController = false;
+	public bool useController = true;
 	
+	private float previousAngle;
 	// Use this for initialization
 	void Start () {
 	}
@@ -14,7 +15,10 @@ public class Person : MonoBehaviour {
 	void Update () {
 		checkAction();
 		float angle, x, y, rtx, rty;
-		if(!useController){
+		angle = 0f;
+
+		previousAngle = angle;
+		if(!useController) {
 			//wasd movement
 			x = Input.GetAxis("HorizontalKeyboard") * Time.deltaTime * speed;
 			y = Input.GetAxis("VerticalKeyboard") * Time.deltaTime * speed * -1;
@@ -30,26 +34,24 @@ public class Person : MonoBehaviour {
 
 			angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
 
-		}else{
-			//controller inputs
-			x = Input.GetAxis("L_XAxis_1") * Time.deltaTime * speed;
-			y = Input.GetAxis("L_YAxis_1") * Time.deltaTime * speed * -1;
+		} else {
+			x = Input.GetAxis("L_XAxis_" + this.tag.Substring(this.tag.Length-1,1)) * Time.deltaTime * speed;
+			y = Input.GetAxis("L_YAxis_" + this.tag.Substring(this.tag.Length-1,1)) * Time.deltaTime * speed * -1;
+			rtx = Input.GetAxis("R_XAxis_" + this.tag.Substring(this.tag.Length-1,1));
+			rty = -1*Input.GetAxis("R_YAxis_" + this.tag.Substring(this.tag.Length-1,1));
 			this.transform.Translate(x, y, 0, Space.World); //global axis
 
-			rtx = Input.GetAxis("R_XAxis_1");
-			rty = -1*Input.GetAxis("R_YAxis_1");
-
+			//change the angle
 			angle = Mathf.Atan2(rty, rtx) * Mathf.Rad2Deg;
-
 		}
-		//change the angle
-		this.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, angle - 90));
+		if (previousAngle != angle) {
+			this.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, angle - 90));
+		}
 	}
 
 	void checkAction(){
 		if (Input.GetKeyDown ("space")){//action
 			//print("space pressed");
-
 			Vector3 fwdVec = this.transform.up;
 			RaycastHit2D hitObj = Physics2D.Raycast(this.transform.position, fwdVec, 2);
 			if(hitObj.transform != null){
@@ -57,7 +59,6 @@ public class Person : MonoBehaviour {
 			}
 
 			Debug.DrawLine(this.transform.position, this.transform.position + new Vector3(fwdVec.x*actionRange,fwdVec.y*actionRange,0), Color.blue, 20);
-
 		}
 	}
 	//2d trigger

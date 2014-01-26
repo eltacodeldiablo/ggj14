@@ -187,7 +187,7 @@ GameObject:
   - 114: {fileID: 40260228}
   m_Layer: 0
   m_Name: Moveable Cube Test
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,6 +313,22 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1985986947}
+    - target: {fileID: 11400000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
+      propertyPath: coneMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
+      propertyPath: playerFOV
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
   m_RootGameObject: {fileID: 877483943}
@@ -459,6 +475,14 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1153353360}
+    - target: {fileID: 2300000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
+      propertyPath: coneMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c41f7a4a87479a46ba4efe20328f8c6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
   m_RootGameObject: {fileID: 1904862925}
@@ -1050,6 +1074,7 @@ MonoBehaviour:
   viewDist: 4
   degBtwnRays: 1
   player: {fileID: 1985986947}
+  coneMaterial: {fileID: 0}
 --- !u!4 &877483948
 Transform:
   m_ObjectHideFlags: 0
@@ -1237,7 +1262,7 @@ GameObject:
   - 114: {fileID: 1018418462}
   m_Layer: 0
   m_Name: Moveable Cube Test
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1355,6 +1380,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3a4cdf49e294f400fa85876debbac9a5, type: 2}
+      propertyPath: useController
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a4cdf49e294f400fa85876debbac9a5, type: 2}
   m_RootGameObject: {fileID: 1153353360}
@@ -1375,7 +1404,7 @@ GameObject:
   - 114: {fileID: 1105717593}
   m_Layer: 0
   m_Name: Moveable Cube Test
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1520,7 +1549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   actionRange: 1.10000002
-  useController: 0
+  useController: 1
 --- !u!23 &1153353364
 Renderer:
   m_ObjectHideFlags: 0
@@ -1774,7 +1803,7 @@ GameObject:
   - 114: {fileID: 1254382214}
   m_Layer: 0
   m_Name: Moveable Cube Test
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2098,7 +2127,7 @@ GameObject:
   - 114: {fileID: 1701642343}
   m_Layer: 0
   m_Name: Moveable Cube Test
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2456,6 +2485,7 @@ MonoBehaviour:
   viewDist: 4
   degBtwnRays: 1
   player: {fileID: 1153353360}
+  coneMaterial: {fileID: 2100000, guid: 7c41f7a4a87479a46ba4efe20328f8c6, type: 2}
 --- !u!4 &1904862930
 Transform:
   m_ObjectHideFlags: 0
@@ -2596,7 +2626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   actionRange: 1.10000002
-  useController: 0
+  useController: 1
 --- !u!23 &1985986949
 Renderer:
   m_ObjectHideFlags: 0

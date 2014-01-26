@@ -5,11 +5,12 @@ public class Cone : MonoBehaviour {
         public float playerFOV = 40.0f;
         public float viewDist = 4f;
         public float degBtwnRays = 1f;
-    public GameObject player;
-
+        public GameObject player;
+        public Material coneMaterial;
+        
         private Vector3[] newVertices;
-    private Vector2[] newUV;
-    private int[] newTriangles;
+        private Vector2[] newUV;
+        private int[] newTriangles;
 
     void Start() {
         Mesh mesh = new Mesh();
@@ -93,10 +94,14 @@ public class Cone : MonoBehaviour {
 	        //this.transform.position = new Vectorthis.transform.position;
 	    
         }
-    //MODIFY MESH;
-    mesh.vertices = newVertices;
-    mesh.uv = newUV;
-    mesh.triangles = newTriangles;
+        //MODIFY MESH;
+        mesh.vertices = newVertices;
+        mesh.uv = newUV;
+        mesh.triangles = newTriangles;
+        mesh.RecalculateNormals();
+
+        //add texture based on player
+        GetComponent("MeshRenderer").renderer.material = coneMaterial;
     }
 
 }
