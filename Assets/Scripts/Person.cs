@@ -56,9 +56,11 @@ public class Person : MonoBehaviour {
 			RaycastHit2D hitObj = Physics2D.Raycast(this.transform.position, fwdVec, 2);
 			if(hitObj.transform != null){
 				hitObj.transform.gameObject.SendMessage("Activate");
-			}
+				Debug.DrawLine(this.transform.position, new Vector2(hitObj.point.x, hitObj.point.y), Color.blue, 20);
 
-			Debug.DrawLine(this.transform.position, this.transform.position + new Vector3(fwdVec.x*actionRange,fwdVec.y*actionRange,0), Color.blue, 20);
+			}else{
+				Debug.DrawLine(this.transform.position, this.transform.position + new Vector3(fwdVec.x*actionRange,fwdVec.y*actionRange,0), Color.blue, 20);
+			}
 		}
 	}
 	//2d trigger
