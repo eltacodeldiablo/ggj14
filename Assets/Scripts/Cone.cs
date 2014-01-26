@@ -2,9 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class Cone : MonoBehaviour {
-        public float playerFOV = 40.0f;
-        public float viewDist = 4f;
-        public float degBtwnRays = 1f;
+    public float playerFOV = 40.0f;
+    public float viewDist = 4f;
+    public float degBtwnRays = 1f;
+    public Material mat;
     public GameObject player;
 
         private Vector3[] newVertices;
@@ -97,6 +98,18 @@ public class Cone : MonoBehaviour {
     mesh.vertices = newVertices;
     mesh.uv = newUV;
     mesh.triangles = newTriangles;
-    }
 
+    Color[] colors = new Color[mesh.vertices.Length];
+
+	for (int j = 0; j < mesh.vertices.Length;j++){
+		colors[j] = Color.black;
+	}	
+    mesh.colors = colors;
+
+    }
+	void SetMaterial()
+	{
+		Renderer renderer = GetComponent<MeshRenderer>().renderer;
+		renderer.material = mat;
+	}
 }
