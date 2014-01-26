@@ -5,6 +5,7 @@ public class Person : MonoBehaviour {
 	public float speed = 2.0f;
 	public float actionRange = 1.2f;
 	public bool useController = true;
+	public GameObject poisonPrefab;
 	
 	private float foodEaten = 0;
 	private float poisonEaten = 0;
@@ -66,7 +67,21 @@ public class Person : MonoBehaviour {
 			}else{
 				// Debug.DrawLine(this.transform.position, this.transform.position + new Vector3(fwdVec.x*actionRange,fwdVec.y*actionRange,0), Color.blue, 20);
 			}
+		} else if (Input.GetKeyDown("joystick 1 button 2") || Input.GetKeyDown("joystick 2 button 2")) {
+		    Debug.Log("button2");
+		    createPoison();   
 		}
+	}
+	
+	void createPoison() {
+	    float maxSize = 1.75f;
+	    Debug.Log("foodeaten: " + foodEaten);
+	    if (foodEaten > maxSize) {
+	        GameObject newCandy = Instantiate(poisonPrefab, this.transform.position, Quaternion.Euler(Vector3.zero)) as GameObject;
+		    float randDimension = Random.Range(1f,maxSize);
+		    newCandy.transform.localScale = new Vector3(randDimension,randDimension,randDimension);
+		    foodEaten -= randDimension;
+	    }
 	}
 	//2d trigger
 	void OnTriggerEnter2D(Collider2D c){

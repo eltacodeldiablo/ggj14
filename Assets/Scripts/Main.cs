@@ -14,9 +14,11 @@ public class Main : MonoBehaviour {
     private const int originalOrthographicSize = 5;
     private bool isScrolling = false;
 
+    private float startTime;
 	// Use this for initialization
 	void Start () {
 		populateWithFood();
+		startTime = Time.timeSinceLevelLoad;
 	}
 	
 	// Update is called once per frame
@@ -67,11 +69,15 @@ public class Main : MonoBehaviour {
 		for(int i = 0; i < numFood; i++){
 		    GameObject newCandy = Instantiate(foodPrefab, createRandomVector(), Quaternion.Euler(Vector3.zero)) as GameObject;
 		    float randDimension = Random.Range(1f,1.75f);
-		    newCandy.transform.localScale = new Vector3();
+		    newCandy.transform.localScale = new Vector3(randDimension,randDimension,randDimension);
 		}
 	}
 	
 	Vector2 createRandomVector(){
 	    return new Vector2(Random.Range(-16,18),Random.Range(-30,5));
+	}
+
+	void OnGUI(){
+		float timer = 60f - (Time.timeSinceLevelLoad - startTime);
 	}
 }
