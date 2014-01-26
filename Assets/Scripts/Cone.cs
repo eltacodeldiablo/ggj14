@@ -35,6 +35,8 @@ public class Cone : MonoBehaviour {
             
             //MESH INIT
             Mesh mesh = GetComponent<MeshFilter>().mesh;
+            Renderer renderer = GetComponent<MeshRenderer>().renderer;
+
             mesh.Clear();
 		    newVertices[0] = player.transform.position;
 		    // Debug.Log(newVertices.Length);
@@ -101,7 +103,9 @@ public class Cone : MonoBehaviour {
         mesh.RecalculateNormals();
 
         //add texture based on player
-        GetComponent("MeshRenderer").renderer.material = coneMaterial;
+        Material mat = Resources.Load("VisionConeP" + player.tag.Substring(player.tag.Length-1,1)) as Material;
+        renderer.material = mat;
+        print(mat);
     }
 
 }

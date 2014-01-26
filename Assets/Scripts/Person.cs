@@ -50,7 +50,7 @@ public class Person : MonoBehaviour {
 	}
 
 	void checkAction(){
-		if (Input.GetKeyDown ("space")){//action
+		if (Input.GetKeyDown("space") || Input.GetKeyDown("joystick 1 button 0") || Input.GetKeyDown("joystick 2 button 0")) {//action
 			//print("space pressed");
 			Vector3 fwdVec = this.transform.up;
 			RaycastHit2D hitObj = Physics2D.Raycast(this.transform.position, fwdVec, 2);

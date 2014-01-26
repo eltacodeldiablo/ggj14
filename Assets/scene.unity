@@ -482,7 +482,15 @@ Prefab:
     - target: {fileID: 11400000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
       propertyPath: coneMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 7c41f7a4a87479a46ba4efe20328f8c6, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
   m_RootGameObject: {fileID: 1904862925}
@@ -2485,7 +2493,7 @@ MonoBehaviour:
   viewDist: 4
   degBtwnRays: 1
   player: {fileID: 1153353360}
-  coneMaterial: {fileID: 2100000, guid: 7c41f7a4a87479a46ba4efe20328f8c6, type: 2}
+  coneMaterial: {fileID: 0}
 --- !u!4 &1904862930
 Transform:
   m_ObjectHideFlags: 0
