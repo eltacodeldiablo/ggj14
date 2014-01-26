@@ -6,7 +6,7 @@ public class Cone : MonoBehaviour {
     public float viewDist = 4f;
     public float degBtwnRays = 1f;
     public GameObject player;
-    
+   
     private Vector3[] newVertices;
     private Vector2[] newUV;
     private int[] newTriangles;
@@ -37,9 +37,9 @@ public class Cone : MonoBehaviour {
             Renderer renderer = GetComponent<MeshRenderer>().renderer;
 
             mesh.Clear();
-		    newVertices[0] = player.transform.position;
-		    // Debug.Log(newVertices.Length);
-		    newUV[0] = new Vector2(newVertices[0].x, newVertices[0].y);
+            newVertices[0] = player.transform.position;
+            // Debug.Log(newVertices.Length);
+            newUV[0] = new Vector2(newVertices[0].x, newVertices[0].y);
 
         for(float i = 0f; i < playerFOV; i+=degBtwnRays) {//Raycast every 1 degree in FOV
             //RAYCAST INIT
@@ -50,17 +50,18 @@ public class Cone : MonoBehaviour {
             float sn = Mathf.Sin(theta);
 
             Vector3 fwdVec = player.transform.up;
-			Vector2 rayDir = new Vector2(fwdVec.x * cs - fwdVec.y * sn, fwdVec.x * sn + fwdVec.y * cs);
+            Vector2 rayDir = new Vector2(fwdVec.x * cs - fwdVec.y * sn, fwdVec.x * sn + fwdVec.y * cs);
 
             RaycastHit2D hitObj = Physics2D.Raycast(player.transform.position, rayDir,viewDist);
             if(hitObj.transform != null){
-            	if(hitObj.transform.gameObject.tag == "Block"){
+                if(hitObj.transform.gameObject.tag == "Block"){
                     //red if hitting an object
                     player.transform.renderer.material.color = Color.red;
                     //Send a message to the obj hit to do it's thing
                     hitObj.transform.gameObject.SendMessage(player.transform.gameObject.tag+"Looking");
                 } else if (hitObj.transform.gameObject.tag == "Food") {
-                    hitObj.transform.gameObject.SendMessage("Eaten");
+                    
+                    hitObj.transform.gameObject.SendMessage("Eaten", player.gameObject);
                     //TODO
                 }
 
@@ -78,25 +79,25 @@ public class Cone : MonoBehaviour {
                     newUV[intI+1] = new Vector2(newVertices[intI+1].x, newVertices[intI+1].y);
             }
             //Add new triangle to mesh only if there are a least 2 verts
-	        if(i > 0){
-	            // Debug.Log(newTriangles.Length);
-	            // Debug.Log(intI);
-	            newTriangles[intI*3] = 0;
-				newTriangles[intI*3+1] = (intI+1)-1;//Please keep the (i+1) for clarity's sake
-				newTriangles[intI*3+2] = intI+1;
-	        }
-	        
-	        //draw red lines
-	        Debug.DrawLine(
-	        player.transform.position,
-	        player.transform.position + new Vector3(
-	                viewDist*rayDir.x,
-	                viewDist*rayDir.y,
-	                0),
-	        Color.red);
-	                
-	        //this.transform.position = new Vectorthis.transform.position;
-	    
+            if(i > 0){
+                // Debug.Log(newTriangles.Length);
+                // Debug.Log(intI);
+                newTriangles[intI*3] = 0;
+                newTriangles[intI*3+1] = (intI+1)-1;//Please keep the (i+1) for clarity's sake
+                newTriangles[intI*3+2] = intI+1;
+            }
+            
+            //draw red lines
+            Debug.DrawLine(
+            player.transform.position,
+            player.transform.position + new Vector3(
+                    viewDist*rayDir.x,
+                    viewDist*rayDir.y,
+                    0),
+            Color.red);
+                    
+            //this.transform.position = new Vectorthis.transform.position;
+       
         }
         //MODIFY MESH;
         mesh.vertices = newVertices;
@@ -104,12 +105,12 @@ public class Cone : MonoBehaviour {
         mesh.triangles = newTriangles;
         mesh.RecalculateNormals();
 
-	    Color[] colors = new Color[mesh.vertices.Length];
+        Color[] colors = new Color[mesh.vertices.Length];
 
-		for (int j = 0; j < mesh.vertices.Length;j++){
-			colors[j] = Color.black;
-		}	
-	    mesh.colors = colors;
+        for (int j = 0; j < mesh.vertices.Length;j++){
+            colors[j] = Color.black;
+        }
+        mesh.colors = colors;
 
-    }
+   }
 }

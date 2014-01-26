@@ -20,7 +20,7 @@ public class Person : MonoBehaviour {
 		previousAngle = angle;
 		if(!useController) {
 			//wasd movement
-			x = Input.GetAxis("HorizontalKeyboard") * Time.deltaTime * speed;
+		x = Input.GetAxis("HorizontalKeyboard") * Time.deltaTime * speed;
 			y = Input.GetAxis("VerticalKeyboard") * Time.deltaTime * speed * -1;
 			this.transform.Translate(x, y, 0, Space.World); //global axis
 			rtx = Input.GetAxis("HorizontalKeyboard");
@@ -68,6 +68,10 @@ public class Person : MonoBehaviour {
 			print("touched lever");
 		}
 		//Debug.Log(c.tag);
+	}
+
+	void addToTail(float ogSize) {
+		this.transform.GetComponentInChildren<ParticleSystem>().startLifetime += ogSize/10f;
 	}
 
 }
