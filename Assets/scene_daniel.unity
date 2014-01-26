@@ -270,6 +270,75 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!1 &219588646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 219588647}
+  - 33: {fileID: 219588650}
+  - 65: {fileID: 219588649}
+  - 23: {fileID: 219588648}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &219588647
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 219588646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.00733828545, y: -.00612831116, z: -.0087890625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1985986952}
+--- !u!23 &219588648
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 219588646}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 608b6b088792f40cda02b27b485df2b8, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!65 &219588649
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 219588646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &219588650
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 219588646}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &361378913
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +725,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 9829dc79de61f4012a04e29f3276405c, type: 2}
+  - {fileID: 2100000, guid: 13f31314cb2334c8f8aec6c0797a984f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -692,8 +761,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 783870361}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: -27.8059483, y: -3.44590282, z: -.00870513916}
-  m_LocalScale: {x: 3.05442739, y: 3.05442739, z: 3.05442739}
+  m_LocalPosition: {x: 2.4039669, y: .398163795, z: -.00870513916}
+  m_LocalScale: {x: 4.45883465, y: 4.45883465, z: 4.45883465}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &962289195
@@ -1006,7 +1075,6 @@ MonoBehaviour:
   playerFOV: 80
   viewDist: 7
   degBtwnRays: 1
-  mat: {fileID: 0}
   player: {fileID: 2098947676}
 --- !u!1001 &1192381797
 Prefab:
@@ -1539,7 +1607,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: 84b9e1d19d11078d11005b9844295342, type: 2}
     - target: {fileID: 11400000, guid: 33e54d3e3f4974d64a49450ab14f4a95, type: 2}
       propertyPath: playerFOV
       value: 300
@@ -1581,7 +1649,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 84b9e1d19d11078d11005b9844295342, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1627,7 +1695,6 @@ MonoBehaviour:
   playerFOV: 300
   viewDist: 1000
   degBtwnRays: 1
-  mat: {fileID: 0}
   player: {fileID: 1985986947}
 --- !u!4 &1688816802
 Transform:
@@ -1723,6 +1790,7 @@ Transform:
   m_LocalPosition: {x: 3.0598135, y: -6.63790321, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 219588647}
   - {fileID: 479539755}
   m_Father: {fileID: 0}
 --- !u!50 &1985986954
