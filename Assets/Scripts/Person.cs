@@ -47,8 +47,11 @@ public class Person : MonoBehaviour {
 			//change the angle
 			angle = Mathf.Atan2(rty, rtx) * Mathf.Rad2Deg;
 		}
-		if (previousAngle != angle) {
+		if(rtx == 0 && rty == 0)
+			GameObject.Find("P" + this.tag.Substring(this.tag.Length-1,1) + "Cone").GetComponent<MeshRenderer>().enabled = false;
+		else{
 			this.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, angle - 90));
+			GameObject.Find("P" + this.tag.Substring(this.tag.Length-1,1) + "Cone").GetComponent<MeshRenderer>().enabled = true;
 		}
 	}
 
