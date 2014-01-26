@@ -65,7 +65,9 @@ public class Main : MonoBehaviour {
 
 	void populateWithFood() {
 		for(int i = 0; i < numFood; i++){
-		    Instantiate(foodPrefab, createRandomVector(), Quaternion.Euler(Vector3.zero));
+		    GameObject newCandy = Instantiate(foodPrefab, createRandomVector(), Quaternion.Euler(Vector3.zero)) as GameObject;
+		    float randDimension = Random.Range(1f,1.75f);
+		    newCandy.transform.localScale = new Vector3();
 		}
 	}
 	

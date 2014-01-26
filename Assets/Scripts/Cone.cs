@@ -58,7 +58,7 @@ public class Cone : MonoBehaviour {
                     //red if hitting an object
                     player.transform.renderer.material.color = Color.red;
                     //Send a message to the obj hit to do it's thing
-                    hitObj.transform.gameObject.SendMessage(player.transform.gameObject.tag+"Looking");
+                    hitObj.transform.gameObject.SendMessage(player.transform.gameObject.tag+"Looking", player);
                 } else if (hitObj.transform.gameObject.tag == "Food") {
                     
                     hitObj.transform.gameObject.SendMessage("Eaten", player.gameObject);
