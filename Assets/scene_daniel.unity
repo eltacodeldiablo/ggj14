@@ -558,7 +558,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 479539754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .084035635, y: -.0378575325, z: -8.97253132}
+  m_LocalPosition: {x: .084035635, y: -.0378575325, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1985986952}
@@ -572,7 +572,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1.20000005
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1324,6 +1324,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 1985986947}
   player2: {fileID: 2098947676}
+  foodPrefab: {fileID: 0}
+  numFood: 30
   accelerationModifier: .00999999978
   beginMoveThreshold: 1
   endMoveThreshold: .5
