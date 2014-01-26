@@ -59,7 +59,10 @@ public class Cone : MonoBehaviour {
                     player.transform.renderer.material.color = Color.red;
                     //Send a message to the obj hit to do it's thing
                     hitObj.transform.gameObject.SendMessage(player.transform.gameObject.tag+"Looking");
-                }   
+                } else if (hitObj.transform.gameObject.tag == "Food") {
+                    hitObj.transform.gameObject.SendMessage("Eaten");
+                    //TODO
+                }
 
                 //Add to new Mesh vert at point of contact
                 newVertices[intI+1] = new Vector3(hitObj.point.x,hitObj.point.y,0);
