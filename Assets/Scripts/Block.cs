@@ -8,6 +8,8 @@ public class Block : MonoBehaviour {
 
 	int seenMax = 30;//how long it should stay visible until its back to normal
 	int seenCounter = 0;//counter for being seen
+
+	private GameObject playerLooking;
 	// Use this for initialization
 	void Start () {
 	
@@ -29,20 +31,33 @@ public class Block : MonoBehaviour {
 	}
 
 	void colorFadeOut(){
-		this.transform.renderer.material.color = Color.Lerp(defaultColor, Color.blue, (float)seenCounter/seenMax);
+		if(playerLooking.tag == "Player1"){
+			this.transform.renderer.material.color = Color.Lerp(defaultColor, new Color(22,5,118), (float)seenCounter/seenMax);
+		}
+		else{
+			this.transform.renderer.material.color = Color.Lerp(defaultColor, Color.blue, (float)seenCounter/seenMax);
+		}
 	}
 	void colorFadeIn(){
-		this.transform.renderer.material.color = Color.Lerp(Color.blue, defaultColor, (float)seenCounter/seenMax);
-	}
+		if(playerLooking.tag == "Player1"){
+			this.transform.renderer.material.color = Color.Lerp(new Color(22,5,118), defaultColor, (float)seenCounter/seenMax);
+		}
+		else{
+			this.transform.renderer.material.color = Color.Lerp(Color.blue, defaultColor, (float)seenCounter/seenMax);
+		}	}
 	
 	//seing seen by player 1
-	void Player1Looking(){
-	    this.transform.renderer.material.color = Color.blue;
+	void Player1Looking(GameObject player){
+		playerLooking = player;
+	    this.transform.renderer.material.color = new Color(22,5,118);
 	    isSeen = true;
 	    seenCounter = seenMax;
 	}
 
-	void Player2Looking(){
-	    this.transform.renderer.material.color = Color.yellow;
+	void Player2Looking(GameObject player){
+		playerLooking = player;
+	    this.transform.renderer.material.color = Color.blue;
+	    isSeen = true;
+	    seenCounter = seenMax;
 	}
 }
