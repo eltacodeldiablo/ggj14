@@ -1,9 +1,9 @@
-CANDY CANDY SEE CANDY! for Global Game Jam and CandyJam 2014!
+CANDY CANDY SEE CANDY!
 =====
 
 ![](http://i.imgur.com/w3UFEuG.png)
 
-The game is a variation on the classic snake.
+For Global Game Jam and CandyJam 2014! The game is a variation on the classic snake.
 
 2 local players using controllers try to collect candy and add to their candy trail.
 
