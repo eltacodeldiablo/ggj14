@@ -1,7 +1,7 @@
-ggj14
+CANDY CANDY SEE CANDY! for Global Game Jam and CandyJam 2014!
 =====
 
-CANDY CANDY SEE CANDY! for Global Game Jam and CandyJam!
+![](http://i.imgur.com/w3UFEuG.png)
 
 The game is a variation on the classic snake.
 
